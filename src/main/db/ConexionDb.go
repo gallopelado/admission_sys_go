@@ -5,7 +5,9 @@ import (
 	"fmt"
 	"io/ioutil"
 	"log"
+	"os"
 
+	_ "github.com/lib/pq"
 	"gopkg.in/yaml.v3"
 )
 
@@ -18,7 +20,8 @@ var (
 )
 
 func getProperties() {
-	yfile, err := ioutil.ReadFile("../../resources/application.properties.yaml")
+	pwd, _ := os.Getwd()
+	yfile, err := ioutil.ReadFile(pwd + "/src/resources/application.properties.yaml")
 	if err != nil {
 		log.Fatal(err)
 	}

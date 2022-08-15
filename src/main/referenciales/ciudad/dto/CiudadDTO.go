@@ -5,6 +5,13 @@ type CiudadDTO struct {
 	ciuDescripcion string
 }
 
+func NewCiudadDTO(ciudId int, ciuDescripcion string) *CiudadDTO {
+	return &CiudadDTO{
+		ciudId:         ciudId,
+		ciuDescripcion: ciuDescripcion,
+	}
+}
+
 func (c *CiudadDTO) SetCiuId(ciudId int) {
 	c.ciudId = ciudId
 }
